@@ -1,9 +1,24 @@
+import logoImage from '../assets/favicon.png'
+
 function Header() {
   return (
-    <header className="bg-blue-900 text-white shadow-lg sticky top-0 z-40">
+    <header className="bg-white text-gray-900 shadow-sm border-b border-gray-200 sticky top-0 z-40">
       <div className="container mx-auto px-4 py-2 md:py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
-          <div className="text-xl md:text-2xl font-bold">🔧 Plomberie Urgence Toulouse</div>
+          <a 
+            href="/"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            aria-label="Retour à l'accueil"
+          >
+            <img 
+              src={logoImage} 
+              alt="Logo Plombier Urgence Toulouse"
+              className="h-10 md:h-12 w-auto flex-shrink-0"
+            />
+            <span className="text-lg md:text-xl font-bold text-gray-900">
+              Plombier Urgence Toulouse
+            </span>
+          </a>
           <div className="flex items-center">
             <a 
               href="tel:0612345678" 
