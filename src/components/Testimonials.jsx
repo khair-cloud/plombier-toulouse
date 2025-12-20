@@ -1,49 +1,47 @@
 function Testimonials() {
   const testimonials = [
     {
-      name: "Marie D.",
-      location: "Toulouse Centre",
-      rating: 5,
-      text: "Intervention très rapide pour une fuite d'eau urgente. Plombier professionnel et efficace. Je recommande !"
-    },
-    {
-      name: "Jean-Pierre L.",
-      location: "Blagnac",
-      rating: 5,
-      text: "Service impeccable, canalisation débouchée en moins d'une heure. Prix correct et travail soigné."
+      name: "Marc D.",
+      location: "Toulouse",
+      text: "Intervention rapide pour une fuite un dimanche soir. Très professionnel."
     },
     {
       name: "Sophie M.",
+      location: "Blagnac",
+      text: "WC bouché résolu en 20 minutes. Service impeccable et prix correct."
+    },
+    {
+      name: "Jean-Pierre L.",
       location: "Colomiers",
-      rating: 5,
-      text: "Disponible même le dimanche ! Problème de chauffe-eau résolu rapidement. Très satisfaite."
+      text: "Chauffe-eau en panne, réparé rapidement. Disponible même le week-end."
     }
   ]
 
   return (
-    <section className="py-16 bg-blue-50">
+    <section className="py-12 md:py-16 bg-blue-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-          Ce que disent nos clients
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-900">
+          Avis clients
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
               className="bg-white p-6 rounded-lg shadow-md"
             >
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-xl">⭐</span>
-                ))}
+              <div className="flex mb-3 text-xl">
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
+                <span>⭐</span>
               </div>
-              <p className="text-gray-700 mb-4 italic">
+              <p className="text-base text-gray-700 mb-4">
                 "{testimonial.text}"
               </p>
-              <div className="border-t pt-4">
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                <p className="text-sm text-gray-600">{testimonial.location}</p>
-              </div>
+              <p className="text-sm text-gray-600">
+                — {testimonial.name}, {testimonial.location}
+              </p>
             </div>
           ))}
         </div>
