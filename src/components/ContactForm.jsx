@@ -99,7 +99,7 @@ function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
+          <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border border-orange-500 shadow-sm">
             <div className="mb-5">
               <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-base">
                 Nom complet *

@@ -17,19 +17,15 @@ function Hero() {
           <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
             🚨 Plombier d'urgence à Toulouse
           </h1>
-          <p className="text-base md:text-2xl mb-4 md:mb-6 font-semibold drop-shadow-lg">
-            Intervention immédiate 24h/24 – 7j/7
-          </p>
-          <p className="text-sm md:text-xl mb-6 md:mb-8 text-white/95 leading-relaxed drop-shadow-lg">
-            Fuite d'eau, WC bouché, chauffe-eau en panne ?<br className="hidden md:block" />
-            <span className="md:hidden"> </span>Un plombier certifié intervient en moins de 30 minutes.
+          <p className="text-base md:text-2xl mb-6 md:mb-8 font-semibold drop-shadow-lg">
+            Intervention immédiate – 24/7
           </p>
           <div className="flex justify-center">
             <a 
               href="tel:0612345678"
               className="btn-primary-lg inline-block shadow-xl w-full md:w-auto text-center"
             >
-              📞 Appeler maintenant – Intervention immédiate
+              📞 Appeler maintenant
             </a>
           </div>
         </div>
