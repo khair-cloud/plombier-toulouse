@@ -7,7 +7,7 @@ function Header() {
           <div className="flex items-center">
             <a 
               href="tel:0612345678" 
-              className="text-lg md:text-xl font-semibold hover:text-blue-200 transition-colors"
+              className="btn-primary text-sm md:text-base py-2 md:py-2.5 px-4 md:px-5"
             >
               📞 06 12 34 56 78
             </a>

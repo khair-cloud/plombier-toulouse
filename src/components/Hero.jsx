@@ -27,7 +27,7 @@ function Hero() {
           <div className="flex justify-center">
             <a 
               href="tel:0612345678"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 md:py-4 rounded-lg text-base md:text-xl font-bold inline-block transition-colors shadow-xl w-full md:w-auto"
+              className="btn-primary-lg inline-block shadow-xl w-full md:w-auto text-center"
             >
               📞 Appeler maintenant – Intervention immédiate
             </a>

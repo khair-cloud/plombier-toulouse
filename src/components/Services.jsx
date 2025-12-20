@@ -33,7 +33,7 @@ function Services() {
         <div className="md:hidden mb-6 text-center">
           <button
             onClick={scrollToContact}
-            className="bg-transparent border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-6 py-3 rounded-lg text-base font-semibold transition-colors w-full"
+            className="w-full btn-primary-md"
           >
             Être rappelé en 5 minutes
           </button>

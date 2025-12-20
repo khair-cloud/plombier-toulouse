@@ -12,9 +12,9 @@ function App() {
     <div className="min-h-screen bg-white pb-20 md:pb-0">
       <Header />
       <Hero />
-      <Services />
-      <TrustSection />
       <ContactForm />
+      <TrustSection />
+      <Services />
       <Testimonials />
       <Footer />
       <StickyCallButton />

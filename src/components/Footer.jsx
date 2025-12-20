@@ -6,7 +6,7 @@ function Footer() {
           <div>
             <a 
               href="tel:0612345678" 
-              className="text-2xl md:text-3xl font-bold text-blue-400 hover:text-blue-300 block mb-2"
+              className="btn-primary-lg inline-block mb-4"
             >
               📞 06 12 34 56 78
             </a>

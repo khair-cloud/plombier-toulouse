@@ -155,7 +155,7 @@ function ContactForm() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="w-full btn-primary-lg disabled:btn-primary-disabled"
             >
               {status === 'sending' ? 'Envoi en cours...' : '📞 Rappel immédiat – Gratuit'}
             </button>
