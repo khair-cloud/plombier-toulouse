@@ -126,7 +126,7 @@ function ContactForm() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-900">
-            Être rappelé immédiatement
+            Être rappelé en 5min
           </h2>
 
           {status === 'success' && (
@@ -225,7 +225,7 @@ function ContactForm() {
               disabled={status === 'sending'}
               className="w-full btn-primary-lg disabled:btn-primary-disabled"
             >
-              {status === 'sending' ? 'Envoi en cours...' : '📞 Rappel immédiat – Gratuit'}
+              {status === 'sending' ? 'Envoi en cours...' : '📞 Rappel en 5min – Gratuit'}
             </button>
           </form>
         </div>

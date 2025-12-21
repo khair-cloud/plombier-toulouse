@@ -19,7 +19,10 @@ function Header() {
               Plombier Urgence Toulouse
             </span>
           </a>
-          <div className="flex items-center">
+          <div className="flex flex-col items-center">
+            <p className="text-[10px] text-gray-400 mb-0.5 text-center">
+              Appel non surtaxé
+            </p>
             <a 
               href="tel:0612345678" 
               className="btn-primary text-sm md:text-base py-2 md:py-2.5 px-4 md:px-5"

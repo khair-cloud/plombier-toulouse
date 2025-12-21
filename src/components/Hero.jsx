@@ -17,8 +17,11 @@ function Hero() {
           <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
             🚨 Plombier d'urgence à Toulouse
           </h1>
-          <p className="text-base md:text-2xl mb-6 md:mb-8 font-semibold drop-shadow-lg">
+          <p className="text-base md:text-2xl mb-3 md:mb-4 font-semibold drop-shadow-lg">
             Intervention rapide sur Toulouse
+          </p>
+          <p className="text-sm md:text-base mb-6 md:mb-8 text-white/80 drop-shadow-md">
+            Devis gratuit • Sans engagement • Artisan local • Du lundi au dimanche – 7h à 22h
           </p>
           <div className="flex justify-center">
             <a 
