@@ -4,23 +4,52 @@ function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    urgency: ''
+    urgency: '',
+    postalCode: ''
   })
   const [status, setStatus] = useState('idle') // idle, sending, success, error
   const [errorMessage, setErrorMessage] = useState('')
+  const [postalCodeError, setPostalCodeError] = useState('')
 
   // Remplacez cette URL par votre endpoint Formspree après création du compte
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjanokr'
 
+  // Liste des codes postaux autorisés
+  const ALLOWED_POSTAL_CODES = [
+    '31000', '31100', '31200', '31300', '31400', '31500',
+    '31120', '31130', '31140', '31150', '31170', '31240', '31270', '31280',
+    '31470', '31490', '31520', '31530',
+    '31600', '31650', '31670',
+    '31700', '31770', '31780', '31790',
+    '31820', '31830', '31840', '31850'
+  ]
+
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
+    
+    // Pour le code postal, n'accepter que les chiffres
+    if (name === 'postalCode') {
+      const digitsOnly = value.replace(/\D/g, '')
+      if (digitsOnly.length <= 5) {
+        setFormData(prev => ({
+          ...prev,
+          [name]: digitsOnly
+        }))
+        // Réinitialiser l'erreur lors de la saisie
+        setPostalCodeError('')
+      }
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }))
+    }
   }
 
   const validateForm = () => {
+    setErrorMessage('')
+    setPostalCodeError('')
+    
     if (!formData.name.trim()) {
       setErrorMessage('Le nom est requis')
       return false
@@ -36,6 +65,19 @@ function ContactForm() {
     }
     if (!formData.urgency) {
       setErrorMessage('Veuillez sélectionner un type d\'urgence')
+      return false
+    }
+    // Validation du code postal
+    if (!formData.postalCode.trim()) {
+      setPostalCodeError('Le code postal est requis')
+      return false
+    }
+    if (formData.postalCode.length !== 5) {
+      setPostalCodeError('Le code postal doit contenir 5 chiffres')
+      return false
+    }
+    if (!ALLOWED_POSTAL_CODES.includes(formData.postalCode)) {
+      setPostalCodeError('Nous ne desservons pas ce code postal.')
       return false
     }
     return true
@@ -65,8 +107,10 @@ function ContactForm() {
         setFormData({
           name: '',
           phone: '',
-          urgency: ''
+          urgency: '',
+          postalCode: ''
         })
+        setPostalCodeError('')
       } else {
         setStatus('error')
         setErrorMessage('Une erreur est survenue. Veuillez réessayer ou nous appeler directement.')
@@ -129,6 +173,30 @@ function ContactForm() {
                 placeholder="06 12 34 56 78"
                 className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+            </div>
+
+            <div className="mb-5">
+              <label htmlFor="postalCode" className="block text-gray-700 font-semibold mb-2 text-base">
+                Code postal (zone d'intervention) *
+              </label>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                value={formData.postalCode}
+                onChange={handleChange}
+                required
+                maxLength="5"
+                placeholder="31000"
+                className={`w-full px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 ${
+                  postalCodeError 
+                    ? 'border-red-500 focus:ring-red-500' 
+                    : 'border-gray-300 focus:ring-blue-500'
+                }`}
+              />
+              {postalCodeError && (
+                <p className="mt-2 text-sm text-red-600">{postalCodeError}</p>
+              )}
             </div>
 
             <div className="mb-6">
