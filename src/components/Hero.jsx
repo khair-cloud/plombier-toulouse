@@ -18,7 +18,7 @@ function Hero() {
             🚨 Plombier d'urgence à Toulouse
           </h1>
           <p className="text-base md:text-2xl mb-6 md:mb-8 font-semibold drop-shadow-lg">
-            Intervention immédiate – 24/7
+            Intervention rapide sur Toulouse
           </p>
           <div className="flex justify-center">
             <a 
