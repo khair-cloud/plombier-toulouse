@@ -1,4 +1,4 @@
-import logoImage from '../assets/favicon.png'
+import logoImage from '../assets/logo-plomberie.png'
 
 function Header() {
   return (

@@ -1,6 +1,34 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="4" fill="#F97316"/>
-  <path d="M16 8L12 12H14V20H18V12H20L16 8Z" fill="white"/>
-  <path d="M10 22H22V24H10V22Z" fill="white"/>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond transparent pour centrer le logo -->
+  <rect width="512" height="512" fill="transparent"/>
+  
+  <!-- Logo centré avec padding pour maximiser la taille visible -->
+  <!-- Ajustez ces valeurs selon votre logo pour qu'il utilise ~80% de l'espace -->
+  <g transform="translate(64, 64) scale(0.75)">
+    <!-- Votre logo ici - remplacez par le contenu réel de votre logo -->
+    <!-- Exemple avec une clé à molette et une goutte stylisées -->
+    <circle cx="192" cx="192" r="180" fill="#F97316" opacity="0.1"/>
+    <!-- Clé à molette orange -->
+    <path d="M120 80L160 120H140V200H180V120H200L160 80L120 80Z" fill="#F97316" filter="url(#glow-orange)"/>
+    <!-- Goutte bleue -->
+    <path d="M220 100C220 90 230 80 240 80C250 80 260 90 260 100C260 120 240 140 240 160L240 180L220 180L220 160C220 140 200 120 220 100Z" fill="#3B82F6" filter="url(#glow-blue)"/>
+    
+    <!-- Filtres de glow pour la visibilité -->
+    <defs>
+      <filter id="glow-orange" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </g>
 </svg>
-
