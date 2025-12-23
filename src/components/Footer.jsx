@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8 md:py-12">
+    <footer className="bg-gray-50 text-gray-900 py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4">
           <div>
@@ -10,13 +10,13 @@ function Footer() {
             >
               📞 06 12 34 56 78
             </a>
-            <p className="text-base md:text-lg text-gray-400">
-              Disponible 24h/24 – 7j/7
+            <p className="text-base md:text-lg text-gray-600">
+              Du lundi au dimanche – 7h à 22h
             </p>
           </div>
           <div className="pt-4">
-            <p className="text-base text-gray-400">
-              Zone d'intervention : Toulouse et environs
+            <p className="text-base text-gray-600">
+              Zone d'intervention : Toulouse
             </p>
           </div>
         </div>

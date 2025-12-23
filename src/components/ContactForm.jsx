@@ -143,7 +143,7 @@ function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border border-orange-500 shadow-sm">
+          <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border-2 border-[#2FA4E7] shadow-sm">
             <div className="mb-5">
               <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-base">
                 Nom complet *
@@ -223,7 +223,7 @@ function ContactForm() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full btn-primary-lg disabled:btn-primary-disabled"
+              className="w-full py-4 md:py-5 px-8 md:px-10 text-lg md:text-xl font-bold text-white bg-[#2FA4E7] hover:bg-[#1E8FCC] rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#2FA4E7] focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               {status === 'sending' ? 'Envoi en cours...' : '📞 Rappel en 5min – Gratuit'}
             </button>

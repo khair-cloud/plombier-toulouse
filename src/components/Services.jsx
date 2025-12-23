@@ -28,32 +28,36 @@ function Services() {
   ]
 
   return (
-    <section className="py-12 md:py-16 bg-gray-50">
+    <section className="py-6 md:py-8 bg-white">
       <div className="container mx-auto px-4">
-        <div className="md:hidden mb-6 text-center">
-          <button
-            onClick={scrollToContact}
-            className="w-full btn-primary-md"
-          >
-            Être rappelé en 5 minutes
-          </button>
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 text-gray-900">
           Nos Services d'Urgence
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-5xl lg:max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
+              className="bg-white p-3 md:p-4 rounded text-left shadow-[0_1px_2px_rgba(0,0,0,0.06),0_4px_12px_rgba(0,0,0,0.08)] hover:shadow-[0_2px_4px_rgba(0,0,0,0.08),0_8px_20px_rgba(0,0,0,0.12)] hover:-translate-y-px transition-[box-shadow,transform] duration-200 ease-in-out"
             >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-900">
-                {service.title}
-              </h3>
-              <p className="text-base text-gray-600">{service.description}</p>
+              <div className="flex items-center gap-2 mb-1 md:mb-1.5">
+                <span className="text-xl md:text-2xl">{service.icon}</span>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                  {service.title}
+                </h3>
+              </div>
+              <p className="text-sm text-gray-500 leading-tight">
+                {service.description}
+              </p>
             </div>
           ))}
+        </div>
+        <div className="mt-8 md:mt-12 text-center">
+          <button
+            onClick={scrollToContact}
+            className="btn-primary-md"
+          >
+            Rappel en 5 min – Gratuit
+          </button>
         </div>
       </div>
     </section>

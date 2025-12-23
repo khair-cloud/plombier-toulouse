@@ -18,7 +18,7 @@ function Hero() {
             🚨 Plombier d'urgence à Toulouse
           </h1>
           <p className="text-base md:text-2xl mb-3 md:mb-4 font-semibold drop-shadow-lg">
-            Intervention rapide sur Toulouse
+            Intervention en moins de 30 min
           </p>
           <p className="text-sm md:text-base mb-6 md:mb-8 text-white/80 drop-shadow-md">
             Devis gratuit • Sans engagement • Artisan local • Du lundi au dimanche – 7h à 22h
