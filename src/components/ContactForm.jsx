@@ -122,7 +122,7 @@ function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-12 md:py-16 bg-white">
+    <section id="contact" className="py-6 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-900">

@@ -49,7 +49,7 @@ function CompactTestimonials() {
   }
 
   return (
-    <section className="py-6 md:py-8 bg-white">
+    <section className="pt-2 pb-6 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Desktop : Grille avec 4 avis */}
