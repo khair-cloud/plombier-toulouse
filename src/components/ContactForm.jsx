@@ -143,7 +143,7 @@ function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border-2 border-[#2FA4E7] shadow-sm">
+          <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border border-[#2C3667] shadow-sm">
             <div className="mb-5">
               <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-base">
                 Nom complet *
@@ -223,9 +223,16 @@ function ContactForm() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="w-full py-4 md:py-5 px-8 md:px-10 text-lg md:text-xl font-bold text-white bg-[#2FA4E7] hover:bg-[#1E8FCC] rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#2FA4E7] focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="w-full py-4 md:py-5 px-8 md:px-10 text-lg md:text-xl font-bold text-white bg-[#2C3667] hover:bg-[#1F274D] rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#2C3667] focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              {status === 'sending' ? 'Envoi en cours...' : '📞 Rappel en 5min – Gratuit'}
+              {status === 'sending' ? 'Envoi en cours...' : (
+                <span className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <span>Rappel en 5min – Gratuit</span>
+                </span>
+              )}
             </button>
           </form>
         </div>
