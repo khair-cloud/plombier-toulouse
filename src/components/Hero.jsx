@@ -15,13 +15,13 @@ function Hero() {
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-4 leading-tight drop-shadow-lg">
-            🚨 Plombier d'urgence à Toulouse
+            Plombier d'urgence à Toulouse, 24h/24 & 7j/7
           </h1>
           <p className="text-base md:text-2xl mb-3 md:mb-4 font-semibold drop-shadow-lg">
             Intervention en moins de 30 min
           </p>
           <p className="text-sm md:text-base mb-6 md:mb-8 text-white/80 drop-shadow-md">
-            Devis gratuit • Sans engagement • Artisan local • Du lundi au dimanche – 7h à 22h
+            Devis gratuit • Sans engagement • Artisan local • Intervention rapide
           </p>
           <div className="flex justify-center">
             <a 
