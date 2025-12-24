@@ -19,8 +19,8 @@ function TrustLogos() {
           />
           <img 
             src={groupamaLogo} 
-            alt="Groupama" 
-            className="h-10 sm:h-10 md:h-12 lg:h-16 opacity-80"
+            alt="Groupama"
+            className="h-14 sm:h-14 md:h-[72px] lg:h-24 opacity-80"
           />
         </div>
       </div>
