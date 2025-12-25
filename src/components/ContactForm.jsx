@@ -3,7 +3,6 @@ import { PHONE_DISPLAY } from '../constants/phone'
 
 function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
     phone: '',
     urgency: '',
     postalCode: ''
@@ -12,8 +11,18 @@ function ContactForm() {
   const [errorMessage, setErrorMessage] = useState('')
   const [postalCodeError, setPostalCodeError] = useState('')
 
-  // Remplacez cette URL par votre endpoint Formspree après création du compte
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjanokr'
+  // Fonction placeholder pour l'API Node.js future
+  // TODO: connecter à l'API Node.js /api/lead
+  const submitLead = async (data) => {
+    // TODO: Implémenter l'appel API
+    // const response = await fetch('/api/lead', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(data),
+    // })
+    // return response.ok
+    return Promise.resolve(true) // Placeholder
+  }
 
   // Liste des codes postaux autorisés
   const ALLOWED_POSTAL_CODES = [
@@ -51,10 +60,6 @@ function ContactForm() {
     setErrorMessage('')
     setPostalCodeError('')
     
-    if (!formData.name.trim()) {
-      setErrorMessage('Le nom est requis')
-      return false
-    }
     if (!formData.phone.trim()) {
       setErrorMessage('Le téléphone est requis')
       return false
@@ -93,33 +98,18 @@ function ContactForm() {
     }
 
     setStatus('sending')
-
-    try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+    
+    // Message temporaire pendant la connexion
+    // TODO: Appeler submitLead(formData) une fois l'API prête
+    setTimeout(() => {
+      setStatus('idle')
+      setFormData({
+        phone: '',
+        urgency: '',
+        postalCode: ''
       })
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({
-          name: '',
-          phone: '',
-          urgency: '',
-          postalCode: ''
-        })
-        setPostalCodeError('')
-      } else {
-        setStatus('error')
-        setErrorMessage('Une erreur est survenue. Veuillez réessayer ou nous appeler directement.')
-      }
-    } catch (error) {
-      setStatus('error')
-      setErrorMessage('Une erreur est survenue. Veuillez réessayer ou nous appeler directement.')
-    }
+      setPostalCodeError('')
+    }, 2000)
   }
 
   return (
@@ -145,21 +135,6 @@ function ContactForm() {
           )}
 
           <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-xl border border-[#2C3667] shadow-sm">
-            <div className="mb-5">
-              <label htmlFor="name" className="block text-gray-700 font-semibold mb-2 text-base">
-                Nom complet *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
             <div className="mb-5">
               <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2 text-base">
                 Téléphone *
@@ -213,11 +188,9 @@ function ContactForm() {
                 className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Sélectionnez un type</option>
-                <option value="fuite">Fuite d'eau</option>
-                <option value="canalisation">Canalisation bouchée</option>
-                <option value="chauffe-eau">Chauffe-eau en panne</option>
-                <option value="wc">WC bouché</option>
-                <option value="autre">Autre urgence</option>
+                <option value="fuite">💧 Fuite d'eau</option>
+                <option value="bouchon">🚽 Bouchon (WC / canalisation)</option>
+                <option value="panne">🚱 Panne (chauffe-eau / robinet)</option>
               </select>
             </div>
 
@@ -226,7 +199,7 @@ function ContactForm() {
               disabled={status === 'sending'}
               className="w-full py-4 md:py-5 px-8 md:px-10 text-lg md:text-xl font-bold text-white bg-[#2C3667] hover:bg-[#1F274D] rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#2C3667] focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
-              {status === 'sending' ? 'Envoi en cours...' : (
+              {status === 'sending' ? 'Formulaire en cours de connexion' : (
                 <span className="flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
