@@ -21,8 +21,8 @@ function Header() {
             </span>
           </a>
           <div className="flex flex-col items-center">
-            <p className="text-[10px] text-gray-400 mb-0.5 text-center">
-              Appel non surtaxé
+            <p className="text-[10px] text-gray-400 mb-0.5 text-center" style={{ color: '#000000' }}>
+              Appel Gratuit
             </p>
             <a 
               href={`tel:${PHONE_TEL}`}
