@@ -1,4 +1,5 @@
 import banniereImage from '../assets/Banniere_plombier.jpeg'
+import { PHONE_TEL } from '../constants/phone'
 
 function Hero() {
   return (
@@ -25,7 +26,7 @@ function Hero() {
           </p>
           <div className="flex justify-center">
             <a 
-              href="tel:0612345678"
+              href={`tel:${PHONE_TEL}`}
               className="btn-primary-lg inline-block shadow-xl w-full md:w-auto text-center"
             >
               <span className="flex items-center justify-center gap-2">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PHONE_DISPLAY } from '../constants/phone'
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -170,7 +171,7 @@ function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                placeholder="06 12 34 56 78"
+                placeholder={PHONE_DISPLAY}
                 className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>

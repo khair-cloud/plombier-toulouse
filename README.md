@@ -48,7 +48,7 @@ npm run build
 
 ## Notes
 
-- Le numéro de téléphone dans le code est un exemple (06 12 34 56 78). Remplacez-le par le vrai numéro.
+- Le numéro de téléphone est défini dans `src/constants/phone.js` (05 25 68 03 95). Modifiez ce fichier pour changer le numéro partout sur le site.
 - Limite gratuite Formspree : 50 soumissions/mois
 - Le formulaire fonctionne sans backend grâce à Formspree
 
