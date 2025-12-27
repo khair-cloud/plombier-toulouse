@@ -4,11 +4,11 @@ function Footer() {
   return (
     <footer className="bg-gray-50 text-gray-900 py-8 md:py-12">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-2">
           <div>
             <a 
               href={`tel:${PHONE_TEL}`}
-              className="btn-primary-lg inline-block mb-4"
+              className="btn-primary-lg inline-block mb-2"
             >
               <span className="flex items-center justify-center gap-2">
                 <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -21,9 +21,12 @@ function Footer() {
               24h/24 & 7j/7
             </p>
           </div>
-          <div className="pt-4">
+          <div className="pt-2">
             <p className="text-base text-gray-600">
               Zone d'intervention : Toulouse
+            </p>
+            <p className="text-base text-gray-600 mt-2">
+              Plateforme de mise en relation entre particuliers et artisans plombiers partenaires.
             </p>
           </div>
         </div>

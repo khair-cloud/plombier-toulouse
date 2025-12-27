@@ -22,7 +22,7 @@ function Hero() {
             Intervention en moins de 30 min
           </p>
           <p className="text-sm md:text-base mb-6 md:mb-8 text-white/80 drop-shadow-md">
-            Devis gratuit • Sans engagement • Artisan local • Intervention rapide
+            Devis gratuit • Sans engagement • Artisan partenaire local • Intervention rapide
           </p>
           <div className="flex justify-center">
             <a 

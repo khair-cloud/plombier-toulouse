@@ -56,7 +56,7 @@ function Services() {
             onClick={scrollToContact}
             className="text-base md:text-lg py-3 md:py-4 px-6 md:px-8 font-bold text-white bg-[#2C3667] hover:bg-[#1F274D] rounded-full transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#2C3667] focus:ring-offset-2"
           >
-            Rappel en 5 min – Gratuit
+            Être rappelé en 5min – Gratuit
           </button>
         </div>
       </div>
