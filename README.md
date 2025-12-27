@@ -6,6 +6,7 @@ Landing page simple pour un service de plomberie d'urgence à Toulouse.
 
 - React 18 + Vite
 - Tailwind CSS
+- Node.js API (Vercel serverless functions)
 
 ## Installation
 
@@ -77,8 +78,34 @@ Sur Vercel : configurer ces variables dans les paramètres du projet.
 
 Le cron job Vercel s'exécute toutes les minutes pour traiter les retries WhatsApp.
 
+## API Endpoints
+
+L'API est entièrement compatible avec Vercel serverless functions. Tous les endpoints sont dans le dossier `api/` :
+
+- `POST /api/lead` : Création d'un nouveau lead avec token de confirmation
+- `GET /api/confirm?token=...` : Confirmation d'un lead et attribution à un plombier
+- `GET/POST /api/whatsapp-retry?secret=...` : Retry automatique des notifications WhatsApp (cron)
+- `GET /api/health` : Endpoint de santé pour tester le bon fonctionnement de l'API
+
+### Tester l'endpoint health
+
+```bash
+curl https://votre-domaine.vercel.app/api/health
+```
+
+Réponse attendue :
+```json
+{
+  "status": "ok",
+  "timestamp": "2024-01-01T12:00:00.000Z",
+  "environment": "production",
+  "platform": "vercel"
+}
+```
+
 ## Notes
 
 - Le numéro de téléphone est défini dans `src/constants/phone.js` (05 25 68 03 95). Modifiez ce fichier pour changer le numéro partout sur le site.
-- Le formulaire est prêt pour l'intégration avec l'API Node.js
+- L'API utilise des fonctions serverless Vercel (pas de serveur Express ou persistant)
+- Tous les endpoints sont dans le format `export default async function handler(req, res)`
 
